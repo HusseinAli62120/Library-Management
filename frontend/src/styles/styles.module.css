@@ -1,0 +1,119 @@
+.page {
+  @apply h-screen flex flex-col;
+}
+
+.link {
+  @apply font-medium text-uniBlue relative inline;
+  &:hover {
+    &::after,
+    &::before {
+      width: 100%;
+      left: 0;
+    }
+  }
+
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 5px);
+    width: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  &::before {
+    transition: 0.4s;
+    background: #2e439d;
+  }
+
+  &::after {
+    transition: 0.2s;
+    background: #f7c236;
+  }
+}
+
+/* Data entry */
+.dataForm {
+  @apply md:px-10 py-10 px-2 mb-10 bg-white border rounded-md shadow-sm shadow-slate-100 max-w-xl flex flex-col items-center justify-center space-y-10;
+}
+
+.submitBtn {
+  @apply md:px-8 sm:px-5 px-3 py-1 border rounded border-uniBlue hover:scale-105 hover:bg-uniBlue hover:text-uniGold transition-all ease-in-out duration-200 disabled:opacity-50 disabled:hover:bg-white disabled:hover:text-black disabled:hover:scale-100;
+}
+
+.card {
+  @apply absolute right-0 md:min-w-[350px]  bg-white border rounded-md shadow-sm shadow-slate-100 md:px-4 md:py-8 px-1 py-1 
+  flex flex-col items-start space-y-5;
+  z-index: 1000;
+  top: 55px;
+}
+
+/* Sign up and Sign in */
+.signup_container {
+  @apply lg:w-8/12 md:w-9/12 sm:w-full m-2;
+  height: 500px;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+    0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+}
+
+.signDirectBtn {
+  @apply text-white border border-white md:px-6 sm:px-3 px-1 py-1 rounded-sm hover:scale-105  transition-all ease-linear duration-200;
+}
+
+.left {
+  @apply flex-1 flex flex-col items-center justify-center space-y-4 w-full md:px-5 px-2;
+  background: linear-gradient(50deg, #2e439d, #2e439d, #f7c236);
+  background-size: 350% 350%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: background-position 0.5s ease-in-out;
+}
+
+/* Hover Effect */
+.left:hover {
+  background-position: right bottom;
+}
+
+.right {
+  @apply flex flex-col items-center justify-center bg-uniWhite space-y-5;
+  flex: 2;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Assign Form */
+.assignForm {
+  @apply md:px-10 px-2 py-10 my-20 flex flex-col items-center justify-center space-y-10 border rounded-md shadow-sm shadow-slate-100 border 
+  w-3/4 md:w-1/2 max-w-xl;
+}
+
+/* Assign modal */
+.Modal {
+  transform: translate(-50%, -50%);
+  @apply text-slate-900 w-4/5 sm:w-3/5 md:w-2/5 bg-white absolute top-1/2 left-1/2 flex flex-col justify-center items-center gap-5 px-5 py-10 outline-none
+  rounded;
+}
+
+/* Assign modal form */
+.assignModalForm {
+  @apply flex flex-col space-y-5 items-center;
+}
+
+/* Delete button */
+.deleteBtn {
+  @apply md:px-8 sm:px-5 px-3 py-1 border rounded flex space-x-2
+   text-red-600 border-red-600
+    hover:scale-105 hover:bg-red-600 hover:text-uniWhite
+    transition-all ease-in-out duration-200;
+}
+
+/* Cancel Button */
+.cancelBtn {
+  @apply md:px-8 sm:px-5 px-3 py-1 border rounded flex space-x-2 
+    text-gray-600 border-gray-500 
+    hover:scale-105 hover:bg-gray-700 hover:text-white 
+    transition-all ease-in-out duration-200;
+}
